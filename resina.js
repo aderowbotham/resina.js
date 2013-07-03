@@ -14,7 +14,7 @@
   }
   
   var init = function(){
-    window.addEventListener('resize', init, false);
+    window.addEventListener('resize', doTest, false);
     doTest();
   }
     
