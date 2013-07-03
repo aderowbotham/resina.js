@@ -19,7 +19,7 @@
   }
     
   var doTest = function(){
-    var isRetina = window.devicePixelRatio >= settings.minPixelRatio && window.innerWidth > settings.minPixelWidth;
+    var isRetina = window.devicePixelRatio >= settings.minPixelRatio && window.innerWidth >= settings.minPixelWidth;
 
     if(isRetina && !retinaIsSet){
       retinaIsSet = true;
