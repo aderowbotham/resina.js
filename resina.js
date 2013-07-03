@@ -47,4 +47,10 @@
   // run as soon as possible
   document.ready = init;
 
+  // uncomment to expose init method
+  // e.g. to pass the settings object as an argument
+  // return {
+  //   init: init
+  // };
+
 })();
