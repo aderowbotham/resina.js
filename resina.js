@@ -29,10 +29,9 @@
     }
   }
 
-
   var applyRetinaAssets = function(){
     var images = top.document.getElementsByTagName('img');
-    var result =[];
+    
     for(var i=0; i<images.length; i++){
       if(hasClass(images[i],settings.className)){        
         images[i].src = images[i].src.replace(/(\.[\w\d_-]+)$/i, settings.suffix+'$1')        
