@@ -4,22 +4,24 @@
 
 (function(){
 
+  'use strict';
+
   var retinaIsSet = false;
 
   var settings = {
     'minPixelRatio': 1.5,
-    'minPixelWidth': 1000,
+    'minPixelWidth': 800, //NOTE zero means this now applies to all images if display is retina, regardless of screen size
     'className': 'hd',
     'suffix' : '@2x'
-  }
-  
+  };
+
   var init = function(){
     window.addEventListener('resize', doTest, false);
     doTest();
-  }
-    
+  };
+
   var doTest = function(){
-    var isRetina = window.devicePixelRatio >= settings.minPixelRatio && window.innerWidth >= settings.minPixelWidth;
+    var isRetina = window.devicePixelRatio >= settings.minPixelRatio && Math.max(window.screen.availHeight,window.screen.availWidth) >= settings.minPixelWidth;
 
     if(isRetina && !retinaIsSet){
       retinaIsSet = true;
@@ -27,17 +29,17 @@
 
       applyRetinaAssets();
     }
-  }
+  };
 
   var applyRetinaAssets = function(){
     var images = top.document.getElementsByTagName('img');
-    
+
     for(var i=0; i<images.length; i++){
-      if(hasClass(images[i],settings.className)){        
-        images[i].src = images[i].src.replace(/(\.[\w\d_-]+)$/i, settings.suffix+'$1')        
-      }      
+      if(hasClass(images[i],settings.className)){
+        images[i].src = images[i].src.replace(/(\.[\w\d_-]+)$/i, settings.suffix+'$1');
+      }
     }
-  }
+  };
 
   function hasClass(element, cls) {
     return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
