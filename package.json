@@ -1,12 +1,13 @@
 {
-  "name": "oyster-interiors",
-  "version": "1.0.0",
+  "name": "resina.js",
+  "description": "Replaces specified images with higher-res alternatives if the resolution and screen width are over a certain thresold",
+  "version": "1.1.0",
+  "license": "Beerware",
+  "repository": "https://github.com/aderowbotham/resina.js",
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-compass": "~0.2.0",
-    "grunt-contrib-watch": "~0.4.3",
-    "grunt-closure-compiler": "~0.0.19",
+    "grunt": "~1.0.2",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-closure-compiler": "~0.0.21",
     "matchdep": "~0.1.2"
   }
 }
-
